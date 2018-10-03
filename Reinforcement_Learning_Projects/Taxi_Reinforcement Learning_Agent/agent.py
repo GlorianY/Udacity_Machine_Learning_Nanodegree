@@ -35,7 +35,7 @@ class Agent:
         
         epsilon = 1.0 / (i_episode) 
 
-        # adding the value of divisor di method select_action AND method step, seems will yield to lower average reward. So divisor 800 has a higher reward than 8000
+        # adding the value of divisor in the method select_action AND method step, seems will yield to lower average reward. So divisor 800 has a higher reward than 8000
         
         policy = np.ones(self.nA) * epsilon / self.nA
         policy[np.argmax(self.Q[state])] = 1 - epsilon + epsilon / self.nA 
