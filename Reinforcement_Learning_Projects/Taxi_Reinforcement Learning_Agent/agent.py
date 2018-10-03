@@ -86,6 +86,6 @@ class Agent:
         
         #Essentially, next_policy is deemed as the best policy that should be selected by the agent
         
-        #probably, np.sum comes from trial-error. In expected sarsa, it uses np.dot(self.Q[next_state], next_policy)
+        #In expected sarsa, it uses np.dot(self.Q[next_state], next_policy)
         self.Q[state][action] = self.Q[state][action] + (self.alpha * (reward + (self.gamma * np.dot(self.Q[next_state], next_policy) - self.Q[state][action])))  
         
